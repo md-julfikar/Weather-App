@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../image/background_img.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    color: #fff;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: calc(100% - 50px);
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    border-radius: 10px;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 20px;
+}
+
+.search-box button {
+    width: 50px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.current-weather-section {
+    text-align: center;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.current-weather h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.current-weather .temperature {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.current-weather .wind-speed {
+    font-size: 22px;
+}
+
+.forecast-section {
+    text-align: center;
+}
+
+.forecast-title {
+    margin-bottom: 10px;
+}
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forecast-day {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.forecast-day h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.forecast-day img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.forecast-day .temperature {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.forecast-day .description {
+    font-size: 18px;
+    font-weight: 500;
+}
