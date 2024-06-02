@@ -1,7 +1,5 @@
 import os
-import django_heroku
 
-ALLOWED_HOSTS = ['.vercel.app']
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 INSTALLED_APPS = [
@@ -45,6 +43,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'weather_project.wsgi.application'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -62,7 +66,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 from django.core.management.utils import get_random_secret_key
 
-SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
+SECRET_KEY = get_random_secret_key()
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -74,7 +78,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'weather', 'static')
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DEBUG = True
-django_heroku.settings(locals())
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1', 'localhost']
