@@ -1,5 +1,7 @@
-import os
+ALLOWED_HOSTS = ['.vercel.app']
 
+import os
+import django_heroku
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 INSTALLED_APPS = [
@@ -78,12 +80,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'weather', 'static')
 ]
 
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-
-
-#Bodda Kalke kola khailen na keno?
-#apni offer korlen kano ? doubt lagtese? ki kahini bolen?
-#sotti
-#chih bodda to
