@@ -70,5 +70,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'weather', 'static')]
 
+
 DEBUG = True
 ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
