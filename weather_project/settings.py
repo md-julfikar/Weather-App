@@ -71,11 +71,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'weather', 'static')
 ]
-
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'weather', 'static','image')
-
-
-
 DEBUG = True
 ALLOWED_HOSTS = ['.vercel.app','127.0.0.1', 'localhost']
