@@ -12,7 +12,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: url("{% static 'image/background_img.jpg' %}") no-repeat center center fixed;
+            background: url("{% staticfiles ' image/background_img.jpg' %}") no-repeat center center fixed;
             background-size: cover;
         }
     </style>
@@ -24,7 +24,7 @@
             {% csrf_token %}
             <div class="search-box">
                 <input type="text" name="city" placeholder="Enter Your Location" required>
-                <button type="submit">Search</button>
+                <button type="submit">Search</button> 
             </div>
         </form>
         <div class="current-weather-section">
