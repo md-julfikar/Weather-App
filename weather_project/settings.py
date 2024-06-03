@@ -1,8 +1,9 @@
 import os
 from django.core.management.utils import get_random_secret_key
 import dj_database_url
-
+from pathlib import Path
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = Path(__file__).resolve().parent.parent
 
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
@@ -60,7 +61,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-SECRET_KEY = get_random_secret_key()
+SECRET_KEY = os.environ.get("SECRET_KEY")
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -71,8 +72,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'weather', 'static')]
 
-DEBUG = True
-ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
+DEBUG = os.environ.get("DEBUG","FALSE").lower()=='true'
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 DATABASES = {
     'default': dj_database_url.parse(
