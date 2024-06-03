@@ -10,7 +10,7 @@
         }
       },
       { 
-        "src": "/public/static",
+        "src": "weather/static",
         "use": "@vercel/static-build"
       }
     ],
@@ -19,10 +19,6 @@
         "src": "/(.*)",
         "dest": "weather_project/wsgi.py"
       }
-    ],
-    "static": {
-      "source": "staticfiles", 
-      "destination": "/public/static"
-    }
+    ]
   }
   
