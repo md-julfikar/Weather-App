@@ -1,5 +1,6 @@
 import os
 from django.core.management.utils import get_random_secret_key
+import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -70,6 +71,15 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'weather', 'static')]
 
-
 DEBUG = True
 ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
+
+DATABASES = {
+    'default': dj_database_url.parse(
+        os.environ.get(
+            'DATABASE_URL',
+            'postgres://weather_app_db_ewnz_user:BuaEPZTpSNcYJ0qFQwG0y3fLsDahzn3R@dpg-cpet59v109ks73fk9g80-a.singapore-postgres.render.com/weather_app_db_ewnz'
+        )
+    )
+}
+WEB_CONCURRENCY = os.environ.get('WEB_CONCURRENCY', 4)
