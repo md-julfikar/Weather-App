@@ -32,24 +32,18 @@ This Weather App provides current weather information and a five-day forecast fo
 5. Start the server:
    ```bash
    python manage.py runserver
+
 ## Usage
 
 - **Open your browser and navigate to** [localhost](http://localhost:8000)
 - **Enter a city name in the search bar to get the current weather and forecast.**
+- Alternatively, you can try a live demo at the provided link ([Weather App](https://weather-app-vbta.onrender.com/)).
 
 ## Contributing
 **Contributions are welcome! Please fork the repository and submit a pull request for review.**
 
 ## Acknowledgements
-- [OpenWeatherMap](https://openweathermap.org/) **for providing the weather data API.**
+- [OpenWeatherMap](https://openweathermap.org/) **is credited for providing the weather data.**
 
-## Test Run
-
-To test the functionality using the provided API endpoint, follow these steps:
-
-### Using cURL
-
-```bash
-curl -X GET https://weather-app-vbta.onrender.com/
 
 
