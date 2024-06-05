@@ -37,7 +37,7 @@ This Weather App provides current weather information and a five-day forecast fo
 
 - **Open your browser and navigate to** [localhost](http://localhost:8000)
 - **Enter a city name in the search bar to get the current weather and forecast.**
-- Alternatively, you can try a live demo at the provided link ([Weather App](https://weather-app-vbta.onrender.com/)).
+- Alternatively, you can try a live demo at the provided link [Weather App](https://weather-app-vbta.onrender.com/).
 
 ## Contributing
 **Contributions are welcome! Please fork the repository and submit a pull request for review.**
