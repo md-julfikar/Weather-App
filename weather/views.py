@@ -30,7 +30,7 @@ def forecast_view(request):
             forecast = []
             for i in range(0, 40, 8): # i don't know  loop condition but i got logic from api doccumentaion
                 day_data = forecast_data['list'][i]
-                date_format=re.split(r'-',day_data['dt_txt])
+                date_format=re.split(r'-',day_data['dt_txt'])
                 day_data['dt_txt']=date_format[2]+'-'+date_format[1]+'-'+date_format[0]
                 day_forecast = {
                     'date': day_data['dt_txt'].split(' ')[0],
