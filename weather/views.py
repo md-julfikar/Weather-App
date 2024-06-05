@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import requests
-
+import re
 def forecast_view(request):
     if request.method == 'POST':
         city = request.POST.get('city')
@@ -26,10 +26,12 @@ def forecast_view(request):
                 'wind_speed': current_weather_data['wind']['speed'],
                 'icon': current_weather_data['weather'][0]['icon'],
             }
-
+            
             forecast = []
             for i in range(0, 40, 8): # i don't know  loop condition but i got logic from api doccumentaion
                 day_data = forecast_data['list'][i]
+                date_format=re.split(r'-',day_data['dt_txt])
+                day_data['dt_txt']=date_format[2]+'-'+date_format[1]+'-'+date_format[0]
                 day_forecast = {
                     'date': day_data['dt_txt'].split(' ')[0],
                     'temperature': day_data['main']['temp'],
